@@ -363,9 +363,9 @@ class CitySelector:
 class Login:
     # used to login in database, implements progressbar class while validating
     def __init__(self, selection):
-        self.host = "data.spotbooking.be"
+        self.host = "host"
         self.databases = selection[:, 1]
-        self.port = 5432
+        self.port = "portnumber"
         self.successful = False
         self.connections = []
         self.make_gui()
