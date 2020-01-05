@@ -183,7 +183,7 @@ class DatePicker:
 
         try:
             # background
-            self.load = Image.open(os.path.dirname(os.path.realpath(__file__)) + "\\resources\Spotbooking.png")
+            self.load = Image.open(os.path.dirname(os.path.realpath(__file__)) + "\\resources\image1.png")
             self.load = self.load.resize((750, 750), Image.ANTIALIAS)
             self.render = ImageTk.PhotoImage(self.load)
             self.background_label = Label(self.main_window, image=self.render)
@@ -191,7 +191,7 @@ class DatePicker:
 
             # frame 0
             self.frame_0 = Frame(self.main_window)
-            load = Image.open(os.path.dirname(os.path.realpath(__file__)) + "\\resources\Geosparc.png")
+            load = Image.open(os.path.dirname(os.path.realpath(__file__)) + "\\resources\image2.png")
             load = load.resize((int(456/2), int(100/2)), Image.ANTIALIAS)
             render = ImageTk.PhotoImage(load)
             img = Label(self.frame_0, image=render)
@@ -305,7 +305,7 @@ class CitySelector:
 
         try:
             # background
-            self.load = Image.open(os.path.dirname(os.path.realpath(__file__)) + "\\resources\Spotbooking.png")
+            self.load = Image.open(os.path.dirname(os.path.realpath(__file__)) + "\\resources\image.png")
             self.load = self.load.resize((750, 750), Image.ANTIALIAS)
             self.render = ImageTk.PhotoImage(self.load)
             self.background_label = Label(self.main_window, image=self.render)

@@ -82,7 +82,7 @@ class Record:
     def get_root_cause(self):
         if self.root_cause02 == "Bug software" or self.root_cause02 == "Internal service outage" or self.root_cause02 \
                 == "Bug configuration":
-            self.root_cause = "Geosparc"
+            self.root_cause = "company"
 
         elif self.root_cause02 == "Configuration request" or self.root_cause02 == "Lack of functional knowledge" or \
                 self.root_cause02 == "Wrong information from customer" or self.root_cause02 == "Missing Feature":
@@ -936,7 +936,7 @@ class Statistics:
             self.rc_ext = 0
 
             for record in self.selected_data.records:
-                if record.root_cause == "Geosparc":
+                if record.root_cause == "Company":
                     self.rc_geo += 1
                 elif record.root_cause == "Not specified":
                     self.rc_notsp += 1
@@ -1025,7 +1025,7 @@ class Statistics:
             self.rc_ext_ref = 0
 
             for record in self.ref_data.records:
-                if record.root_cause == "Geosparc":
+                if record.root_cause == "Company":
                     self.rc_geo_ref += 1
                 elif record.root_cause == "Not specified":
                     self.rc_notsp_ref += 1
@@ -1067,7 +1067,7 @@ class Statistics:
             ["oorzaak: Missing Feature", self.cause_missing, self.cause_missing/self.ticket_numbers, self.cause_missing_ref, self.cause_missing_ref/self.ticket_numbers_ref],
             ["oorzaak: Wrong information from customer", self.cause_inf, self.cause_inf/self.ticket_numbers, self.cause_inf_ref, self.cause_inf_ref/self.ticket_numbers_ref],
             ["oorzaak: Not specified", self.cause_notspec, self.cause_notspec/self.ticket_numbers, self.cause_notspec_ref, self.cause_notspec_ref/self.ticket_numbers_ref],
-            ["root cause: Geosparc", self.rc_geo, self.rc_geo/self.ticket_numbers, self.rc_geo_ref, self.rc_geo_ref/self.ticket_numbers_ref],
+            ["root cause: Company", self.rc_geo, self.rc_geo/self.ticket_numbers, self.rc_geo_ref, self.rc_geo_ref/self.ticket_numbers_ref],
             ["root cause: Customer", self.rc_cust, self.rc_cust/self.ticket_numbers, self.rc_cust_ref, self.rc_cust_ref/self.ticket_numbers_ref],
             ["root cause: Exteral", self.rc_ext, self.rc_ext/self.ticket_numbers, self.rc_ext_ref, self.rc_ext_ref/self.ticket_numbers_ref],
             ["root cause: Undetermined", self.rc_undet, self.rc_undet/self.ticket_numbers, self.rc_undet_ref, self.rc_undet_ref/self.ticket_numbers_ref],
@@ -1096,7 +1096,7 @@ class Statistics:
         self.dict_sel["oorzaak: Missing Feature"] = self.cause_missing
         self.dict_sel["oorzaak: Wrong information from customer"] = self.cause_inf
         self.dict_sel["oorzaak: Not specified"] = self.cause_notspec
-        self.dict_sel["root cause: Geosparc"] = self.rc_geo
+        self.dict_sel["root cause: Company"] = self.rc_geo
         self.dict_sel["root cause: Customer"] = self.rc_cust
         self.dict_sel["root cause: Exteral"] = self.rc_ext
         self.dict_sel["root cause: Undetermined"] = self.rc_undet
@@ -1121,7 +1121,7 @@ class Statistics:
             self.dict_ref["oorzaak: Missing Feature"] = self.cause_missing_ref
             self.dict_ref["oorzaak: Wrong information from customer"] = self.cause_inf_ref
             self.dict_ref["oorzaak: Not specified"] = self.cause_notspec_ref
-            self.dict_ref["root cause: Geosparc"] = self.rc_geo_ref
+            self.dict_ref["root cause: Company"] = self.rc_geo_ref
             self.dict_ref["root cause: Customer"] = self.rc_cust_ref
             self.dict_ref["root cause: Exteral"] = self.rc_ext_ref
             self.dict_ref["root cause: Undetermined"] = self.rc_undet_ref
